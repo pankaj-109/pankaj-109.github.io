@@ -13,6 +13,9 @@
       box-sizing: border-box;
       font-family: 'Fira Code', monospace;
     }
+    html {
+      scroll-behavior: smooth;
+    }
     body {
       background-color: #0f0f0f;
       color: #f0f0f0;
@@ -51,18 +54,65 @@
       margin-right: 15px;
       display: inline-block;
     }
-    @keyframes fadeIn {
-      from {opacity: 0;} to {opacity: 1;}
-    }
-    @keyframes fadeUp {
-      from {opacity: 0; transform: translateY(20px);} to {opacity: 1; transform: translateY(0);}
-    }
     .project-box {
       background: #1a1a1a;
       padding: 20px;
       border-radius: 8px;
       margin-bottom: 20px;
       box-shadow: 0 0 10px #00f7ff20;
+    }
+    .gif-section {
+      text-align: center;
+      margin-top: 40px;
+    }
+    .gif-section img {
+      max-width: 100%;
+      border-radius: 12px;
+      box-shadow: 0 0 15px #00f7ff55;
+    }
+    .resume-box {
+      text-align: center;
+      margin: 40px auto;
+    }
+    .resume-box a {
+      background-color: #00f7ff;
+      color: #0f0f0f;
+      padding: 10px 20px;
+      border-radius: 30px;
+      box-shadow: 0 0 15px #00f7ff55;
+      font-weight: bold;
+      transition: all 0.3s ease-in-out;
+    }
+    .resume-box a:hover {
+      background-color: #0f0f0f;
+      color: #00f7ff;
+      box-shadow: 0 0 25px #00f7ffaa;
+    }
+    .nav-section {
+      text-align: center;
+      margin-top: 60px;
+    }
+    .nav-section a {
+      display: inline-block;
+      margin: 10px;
+      padding: 12px 25px;
+      background: linear-gradient(145deg, #0f0f0f, #1a1a1a);
+      color: #00f7ff;
+      border-radius: 50px;
+      box-shadow: 0 4px 10px #00f7ff50;
+      text-decoration: none;
+      transition: all 0.3s ease-in-out;
+    }
+    .nav-section a:hover {
+      background: #00f7ff;
+      color: #0f0f0f;
+      box-shadow: 0 0 20px #00f7ff;
+    }
+    @keyframes fadeIn {
+      from {opacity: 0;} to {opacity: 1;}
+    }
+    @keyframes fadeUp {
+      from {opacity: 0; transform: translateY(20px);} to {opacity: 1; transform: translateY(0);}
     }
   </style>
 </head>
@@ -71,6 +121,18 @@
     <h1>Hi, I'm Pankaj Kumar</h1>
     <p>🚀 Aspiring Data Scientist | 🤖 AI Tools Explorer | 🛡️ Cybersecurity Learner</p>
   </header>
+
+  <nav class="nav-section">
+    <a href="#about">About</a>
+    <a href="#skills">Skills</a>
+    <a href="#projects">Projects</a>
+    <a href="#resume">Resume</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
+  <section class="gif-section">
+    <img src="https://media.giphy.com/media/qgQUggAC3Pfv687qPC/giphy.gif" alt="coding gif" />
+  </section>
 
   <section id="about">
     <h2>👨‍💻 About Me</h2>
@@ -88,7 +150,7 @@
   </section>
 
   <section id="projects">
-    <h2>📂 Featured Project</h2>
+    <h2>📂 Featured Projects</h2>
     <div class="project-box">
       <p><strong>Student Analyzer Tool</strong> – An intelligent project analyzing student performance using Python libraries.</p>
       <p>
@@ -97,6 +159,19 @@
         </a>
       </p>
     </div>
+    <div class="project-box">
+      <p><strong>Local Resource Finder</strong> – Helping users discover nearby essential services using data filters.</p>
+      <p>
+        <a href="#" target="_blank">
+          🔗 Demo Coming Soon
+        </a>
+      </p>
+    </div>
+  </section>
+
+  <section id="resume" class="resume-box">
+    <h2>📄 My Resume</h2>
+    <a href="#" target="_blank">📥 Download Resume</a>
   </section>
 
   <section id="contact">
@@ -105,6 +180,7 @@
       <a href="https://github.com/pankaj-109" target="_blank">GitHub</a>
       <a href="https://www.linkedin.com/in/pankaj-kumar-80b2b331b/" target="_blank">LinkedIn</a>
       <a href="mailto:omyadavboy@gmail.com">Email</a>
+      <a href="https://www.youtube.com/@pankajyadav5302" target="_blank">YouTube</a>
     </div>
   </section>
 </body>
