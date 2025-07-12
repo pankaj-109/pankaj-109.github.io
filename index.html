@@ -6,24 +6,17 @@
   <meta name="description" content="Pankaj Kumar's Portfolio - Data Scientist | AI Tools | Cybersecurity">
   <meta name="keywords" content="Pankaj Kumar, Data Science, AI Tools, Cybersecurity, Portfolio, Python Developer">
   <title>Pankaj Kumar | Portfolio</title>
-  <link rel="icon" href="https://avatars.githubusercontent.com/u/111276332" />
-  <link href="https://fonts.googleapis.com/css2?family=Fira+Code&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Code&display=swap" rel="stylesheet" />
   <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: 'Fira Code', monospace;
-    }
-    html {
-      scroll-behavior: smooth;
-    }
+    * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Fira Code', monospace; }
+    html { scroll-behavior: smooth; }
     body {
       background-color: #0f0f0f;
       color: #f0f0f0;
       line-height: 1.6;
       overflow-x: hidden;
     }
+
     header {
       padding: 40px;
       text-align: center;
@@ -33,10 +26,28 @@
     header h1 {
       font-size: 3em;
       color: #00f7ff;
+      animation: typing 4s steps(30, end), blink-caret .75s step-end infinite;
+      white-space: nowrap;
+      overflow: hidden;
+      border-right: 4px solid #00f7ff;
+      width: 22ch;
+      margin: auto;
     }
-    header p {
-      font-size: 1.2em;
-      color: #888;
+    @keyframes typing {
+      from { width: 0 }
+      to { width: 22ch }
+    }
+    @keyframes blink-caret {
+      from, to { border-color: transparent }
+      50% { border-color: #00f7ff }
+    }
+    header img {
+      margin-top: 20px;
+      border-radius: 50%;
+      width: 140px;
+      height: 140px;
+      box-shadow: 0 0 15px #00f7ff99;
+      object-fit: cover;
     }
     section {
       max-width: 900px;
@@ -49,15 +60,12 @@
       color: #00f7ff;
       margin-bottom: 20px;
     }
-    a {
-      color: #00f7ff;
-      text-decoration: none;
-    }
+    a { color: #00f7ff; text-decoration: none; }
     .socials a {
       margin-right: 15px;
       display: inline-block;
     }
-    .project-box {
+    .project-box, .cert-box {
       background: #1a1a1a;
       padding: 20px;
       border-radius: 8px;
@@ -65,7 +73,7 @@
       box-shadow: 0 0 10px #00f7ff20;
       transition: transform 0.3s ease;
     }
-    .project-box:hover {
+    .project-box:hover, .cert-box:hover {
       transform: translateY(-5px);
     }
     .gif-section {
@@ -123,6 +131,40 @@
       font-size: 0.9em;
       margin-top: 50px;
     }
+    .cert-buttons button {
+      margin: 10px 10px 0 0;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 25px;
+      background-color: #00f7ff;
+      color: #0f0f0f;
+      cursor: pointer;
+      box-shadow: 0 4px 10px #00f7ff70;
+    }
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 999;
+      padding-top: 60px;
+      left: 0; top: 0; width: 100%; height: 100%;
+      background-color: rgba(0,0,0,0.85);
+    }
+    .modal-content {
+      margin: auto;
+      display: block;
+      max-width: 80%;
+      border-radius: 10px;
+    }
+    .close {
+      position: absolute;
+      top: 30px;
+      right: 50px;
+      color: #fff;
+      font-size: 40px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
     @keyframes fadeIn {
       from {opacity: 0;} to {opacity: 1;}
     }
@@ -132,8 +174,10 @@
   </style>
 </head>
 <body>
+
   <header>
     <h1>Hi, I'm Pankaj Kumar</h1>
+    <img src="https://avatars.githubusercontent.com/u/111276332" alt="Pankaj Profile Picture" />
     <p>🚀 Aspiring Data Scientist | 🤖 AI Tools Explorer | 🛡️ Cybersecurity Learner</p>
   </header>
 
@@ -141,6 +185,7 @@
     <a href="#about">About</a>
     <a href="#skills">Skills</a>
     <a href="#projects">Projects</a>
+    <a href="#certificates">Certificates</a>
     <a href="#resume">Resume</a>
     <a href="#contact">Contact</a>
   </nav>
@@ -152,9 +197,7 @@
   <section id="about">
     <h2>👨‍💻 About Me</h2>
     <p>
-      I'm currently interning at <strong>NIELIT</strong>, exploring <strong>Data Curation</strong> and tools like
-      <em>DeepSeek, RunwayML, Google Colab</em>. With a dream to build my own AI assistant
-      <strong>P.A.N.K.U. (Personalized Artificial Neural Knowledge Unit)</strong>, I’m learning and building every day.
+      I'm currently interning at <strong>NIELIT Ropar</strong> and pursuing B.Tech in CSE from <strong>HPTU</strong>. Exploring <strong>Data Science, Cybersecurity, and AI tools</strong>.
     </p>
   </section>
 
@@ -174,19 +217,27 @@
         </a>
       </p>
     </div>
-    <div class="project-box">
-      <p><strong>Local Resource Finder</strong> – Helping users discover nearby essential services using data filters.</p>
-      <p>
-        <a href="#" target="_blank">
-          🔗 Demo Coming Soon
-        </a>
-      </p>
+  </section>
+
+  <section id="certificates">
+    <h2>🎓 Certificates</h2>
+    <div class="cert-buttons">
+      <button onclick="showCert('nielit')">NIELIT</button>
+      <button onclick="showCert('ibm')">IBM</button>
+    </div>
+    <div class="cert-box" id="cert-display">
+      <p><strong>Click above to view certificates</strong></p>
     </div>
   </section>
 
+  <div id="modal" class="modal">
+    <span class="close" onclick="closeModal()">&times;</span>
+    <img class="modal-content" id="certImage" src="" alt="Certificate" />
+  </div>
+
   <section id="resume" class="resume-box">
     <h2>📄 My Resume</h2>
-    <a href="https://docs.google.com/document/d/1xLA1bhtP1b-iOREh90_nKHG2U7-QqLem/edit?usp=sharing&ouid=103655637035699388875&rtpof=true&sd=true" target="_blank">📥 Download Resume</a>
+    <a href="https://docs.google.com/document/d/1xLA1bhtP1b-iOREh90_nKHG2U7-QqLem/edit?usp=sharing" target="_blank">📥 Download Resume</a>
   </section>
 
   <section id="contact">
@@ -202,5 +253,32 @@
   <footer>
     © 2025 Pankaj Kumar. Crafted with 💙 using HTML & CSS.
   </footer>
+
+  <script>
+    function showCert(org) {
+      const certBox = document.getElementById("cert-display");
+      let imgSrc = "";
+      let orgName = "";
+
+      if (org === "nielit") {
+        imgSrc = "https://via.placeholder.com/600x400?text=NIELIT+Certificate"; // replace later
+        orgName = "NIELIT - Internship Certificate";
+      } else if (org === "ibm") {
+        imgSrc = "https://via.placeholder.com/600x400?text=IBM+Data+Science"; // replace later
+        orgName = "IBM - Python for DS";
+      }
+
+      certBox.innerHTML = `<p><strong>${orgName}</strong></p><img src="${imgSrc}" style="max-width:100%;cursor:pointer" onclick="openModal('${imgSrc}')">`;
+    }
+
+    function openModal(src) {
+      document.getElementById("modal").style.display = "block";
+      document.getElementById("certImage").src = src;
+    }
+
+    function closeModal() {
+      document.getElementById("modal").style.display = "none";
+    }
+  </script>
 </body>
 </html>
